@@ -40,6 +40,13 @@ const ProductForm = ({ states }) => {
 
  function handleCancel() {
   states.setError('')
+  states.setProduct({
+   title: '',
+   handle: '',
+   vendor: '',
+   image: '',
+   price: '',
+  })
  }
 
  return (
@@ -47,7 +54,7 @@ const ProductForm = ({ states }) => {
    <div className="card">
     <div className="card-header bg-light">
      <h5 className="card-title mb-0">
-      {states.product.title !== '' ? 'Edit Product' : 'Add New Product'}
+      {states.isUpdate ? 'Edit Product' : 'Add New Product'}
      </h5>
     </div>
     <div className="card-body">

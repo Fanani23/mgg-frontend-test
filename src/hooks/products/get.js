@@ -25,8 +25,6 @@ export async function getProductByID({ states }) {
   let product = await productAPI.getByID(states.product.id)
   product = product?.data
 
-  console.log(product)
-
   states.setProduct(product)
  } catch (e) {
   console.error(e)
@@ -47,7 +45,7 @@ export async function searchProduct({ states }) {
 
  try {
   let products = await productAPI.search(states.query)
-  products = products?.data
+  products = products?.data || []
 
   states.setProducts(products)
  } catch (e) {

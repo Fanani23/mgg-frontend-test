@@ -10,7 +10,9 @@ const Products = () => {
   price: '',
  })
  const [products, setProducts] = useState([])
+ const [isFetch, setIsFetch] = useState(true)
  const [isLoading, setIsLoading] = useState(false)
+ const [isUpdate, setIsUpdate] = useState(false)
  const [errors, setErrors] = useState('')
  const [error, setError] = useState('')
 
@@ -21,8 +23,12 @@ const Products = () => {
   setProduct,
   products,
   setProducts,
+  isFetch,
+  setIsFetch,
   isLoading,
   setIsLoading,
+  isUpdate,
+  setIsUpdate,
   error,
   setError,
   errors,

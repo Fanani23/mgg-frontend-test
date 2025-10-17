@@ -20,5 +20,6 @@ export async function updateProduct({ states }) {
    image: '',
    price: '',
   })
+  states.setIsUpdate(false)
  }
 }

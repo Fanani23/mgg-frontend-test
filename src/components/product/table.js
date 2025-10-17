@@ -4,6 +4,7 @@ import { getProductByID } from '../../hooks/products/get'
 const TableProducts = ({ states }) => {
  function handleEdit(id) {
   states.setError('')
+  states.setIsUpdate(true)
   states.product.id = id
   getProductByID({ states })
  }

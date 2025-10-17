@@ -4,8 +4,9 @@ import { getProducts } from '../../hooks/products/get'
 
 const ProductList = ({ states }) => {
  useEffect(() => {
-  if (states.products?.length === 0) {
+  if (states.isFetch) {
    getProducts({ states })
+   states.setIsFetch(false)
   }
  }, [states, states.products])
 
