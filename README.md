@@ -1,71 +1,101 @@
-# Getting Started with Create React App
+# Product Management Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React frontend application untuk Product Management System dengan Spring Boot backend.
 
-## Available Scripts
+## 🚀 Tech Stack
 
-In the project directory, you can run:
+- **Framework**: React 18
+- **Build Tool**: Create React App
+- **HTTP Client**: Axios
+- **UI Framework**: Bootstrap 5
+- **Styling**: CSS3 dengan Bootstrap
+- **State Management**: React Hooks (useState, useEffect)
 
-### `npm start`
+## ⚙️ Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Node.js** 16.0 or higher
+- **npm** or **yarn** package manager
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Installation & Setup
 
-### `npm test`
+### 1. Navigate to Frontend Directory
+```bash
+cd frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Using npm
+npm install
 
-### `npm run build`
+# Or using yarn
+yarn install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Using npm
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Or using yarn
+yarn start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Create production build
+npm run build
 
-### `npm run eject`
+# Serve production build locally
+npm install -g serve
+serve -s build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🎨 UI Components
+### ProductList Component
+Displays products in a sortable table
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Action buttons for edit and delete
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Responsive design for mobile devices
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Loading state handling
 
-## Learn More
+### ProductForm Component
+Handles both create and edit operations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Real-time form validation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Auto-generates handle from title
 
-### Code Splitting
+Price validation and formatting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### SearchBar Component
+Real-time search functionality
 
-### Analyzing the Bundle Size
+Search across title, vendor, and handle
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Clear search option
 
-### Making a Progressive Web App
+## 🔌 API Integration
+Service Configuration
+The frontend communicates with the backend API using Axios: 
+```
+// Base URL configuration
+const API_BASE_URL = 'http://localhost:8080';
+```
+### Available Methods
+getAllProducts() - Fetch all products
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+getProductById(id) - Get single product
 
-### Advanced Configuration
+createProduct(product) - Create new product
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+updateProduct(id, product) - Update existing product
 
-### Deployment
+deleteProduct(id) - Delete product
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+searchProducts(query) - Search products
 
-### `npm run build` fails to minify
+## ⚡ Environment Configuration
+Environment Variables
+Create a .env file in the frontend directory:
+```
+BASE_URL = http://localhost:8080/api
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# mgg-frontend-test
+## 🛠️ Run
+```bash
+npm start
+```
