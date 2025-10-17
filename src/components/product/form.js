@@ -172,9 +172,9 @@ const ProductForm = ({ states }) => {
            className="spinner-border spinner-border-sm me-2"
            role="status"
           ></span>
-          {states.product.id ? 'Updating...' : 'Creating...'}
+          {states.isUpdate ? 'Updating...' : 'Creating...'}
          </>
-        ) : states.product.id ? (
+        ) : states.isUpdate ? (
          'Update Product'
         ) : (
          'Create Product'
