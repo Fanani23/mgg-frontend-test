@@ -14,6 +14,7 @@ export async function getProducts({ states }) {
   states.setError('Failed to get products. Please try again.')
  } finally {
   states.setIsLoading(false)
+  states.setIsUpdate(false)
  }
 }
 

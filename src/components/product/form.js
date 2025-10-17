@@ -1,4 +1,5 @@
 import { createProduct } from '../../hooks/products/create'
+import { updateProduct } from '../../hooks/products/update'
 import { validateForm } from '../../utils/product/validateForm'
 
 const ProductForm = ({ states }) => {
@@ -25,6 +26,18 @@ const ProductForm = ({ states }) => {
   states.product.price = parseFloat(states.product?.price)
 
   createProduct({ states })
+ }
+
+ function handleUpdate(e) {
+  e.preventDefault()
+
+  if (!validateForm({ states })) {
+   return
+  }
+
+  states.product.price = parseFloat(states.product?.price)
+
+  updateProduct({ states })
  }
 
  function generateHandle() {
@@ -58,7 +71,7 @@ const ProductForm = ({ states }) => {
      </h5>
     </div>
     <div className="card-body">
-     <form onSubmit={handleSubmit}>
+     <form onSubmit={states.isUpdate ? handleUpdate : handleSubmit}>
       <div className="mb-3">
        <label htmlFor="title" className="form-label">
         Product Title *
